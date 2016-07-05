@@ -1,0 +1,14 @@
+/data/www/open-falcon/src/github.com/open-falcon/portal/web/model/host.py
+#ADD
+ 
+     @classmethod
+     def get_id(cls, hostname):
+       return cls.column(col='id', where="hostname in ('" + hostname + "')")
+
+
+
+/data/www/open-falcon/src/github.com/open-falcon/portal/web/controller/host.py
+#ADD
+@app.route('/host/<host_name>/get_id')
+def host_getid_get(host_name):
+    return jsonify(msg=Host.get_id(host_name))
