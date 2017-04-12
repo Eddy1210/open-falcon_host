@@ -9,8 +9,8 @@ r = requests.get(server_url+"/sso/sig")            ##获取cookie的接口
 sig_id = r.content
 
 def cookie_falcon():                    ##进行单点登录（Portal 只有这个模块下的接口会有这个验证）
-    data = { "name": "limingqing",
-    "password": "limingq520.",
+    data = { "name": "username",
+    "password": "xxxxx",
     "ldap": 1,
     "sig": sig_id,
     "callback": "docker"            ##这个好像可以随便写
